@@ -5,10 +5,10 @@ import { FractureCanvas } from './components/FractureCanvas';
 import './App.css';
 
 const DEFAULT_PARAMS: FractureParams = {
-    shardCount: 0,
-    intensity: 0,
+    shardCount: 200,
+    intensity: 8.0,
     gap: 0,
-    stability: 100,
+    stability: 50,
     elongationY: 1.0,
     elongationX: 1.0,
     rotation: 0,
