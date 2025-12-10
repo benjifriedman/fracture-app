@@ -132,9 +132,43 @@ Fracture uses Voronoi diagrams to create the shatter effect:
 
 Fracture can be deployed to any static hosting service:
 
+### GitHub Pages
+
+The repository includes a GitHub Actions workflow for automatic deployment. 
+
+#### Automatic Deployment (Recommended)
+
+1. **Enable GitHub Pages**:
+   - Go to your repository Settings → Pages
+   - Under "Source", select "GitHub Actions"
+
+2. **Push to main/master branch**: The workflow will automatically build and deploy your app.
+
+#### Manual Deployment
+
+If you prefer to deploy manually or if your repository name differs from `fracture-app`:
+
+1. **Build for GitHub Pages**:
+   ```bash
+   # Replace 'your-repo-name' with your actual GitHub repository name
+   REPO_NAME=your-repo-name npm run build:gh-pages
+   ```
+
+2. **Deploy the dist folder**:
+   - Go to Settings → Pages in your repository
+   - Select your branch (usually `gh-pages` or `main`)
+   - Set the folder to `/dist` or upload the contents of `dist` to your Pages branch
+
+**Troubleshooting**: If you see a blank page, check:
+- Your repository name matches the `REPO_NAME` used in the build command
+- The base path in `vite.config.js` matches your repository name
+- Browser console for JavaScript errors (F12 → Console)
+- That all files in `dist` were uploaded correctly
+
+### Other Hosting Services
+
 - **Vercel**: `vercel --prod`
 - **Netlify**: Connect your Git repository
-- **GitHub Pages**: Use GitHub Actions or deploy manually
 - **Cloudflare Pages**: Connect your repository
 
 The app is a static site with no backend requirements.
