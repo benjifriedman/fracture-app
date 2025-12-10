@@ -1,16 +1,152 @@
-# React + Vite
+# Fracture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful web application that transforms images into stunning fractured, shattered glass effects using Voronoi diagrams and advanced canvas rendering techniques.
 
-Currently, two official plugins are available:
+![Fracture App](https://img.shields.io/badge/React-19.2.0-blue) ![Vite](https://img.shields.io/badge/Vite-7.2.5-purple) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Real-time Image Fracturing**: Upload any image and watch it transform with customizable shatter effects
+- **Advanced Controls**: Fine-tune every aspect of the fracture effect:
+  - Shard count (0-500)
+  - Refraction intensity
+  - Gap width and color
+  - Stability percentage
+  - X/Y axis elongation
+  - Rotation and scatter effects
+- **Mobile Optimized**: Fully responsive design that works beautifully on all devices
+- **Web Share API**: Native sharing on mobile devices with automatic fallback to download
+- **Drag & Drop**: Intuitive image upload with drag-and-drop support
+- **Real-time Preview**: See your changes instantly as you adjust parameters
+- **High-Quality Export**: Download or share your fractured images in JPEG format
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Quick Start
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18+ and npm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd fracture-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+The production build will be output to the `dist` directory, ready for deployment to any static hosting service.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## 🎨 Usage
+
+1. **Upload an Image**: Click or drag and drop an image onto the upload area
+2. **Adjust Parameters**: Use the controls panel to customize the fracture effect:
+   - **Shards**: Number of fracture pieces (0 = original image)
+   - **Refraction**: Intensity of the displacement effect
+   - **Gap Width**: Thickness of the gaps between shards
+   - **Gap Color**: Color of the gaps (default: black)
+   - **Stability**: Percentage of shards that remain unchanged
+   - **Elongation**: Stretch the effect along X or Y axis
+   - **Rotation**: Rotate the entire fracture pattern
+   - **Scatter**: Random rotation applied to individual shards
+3. **Save Your Work**: 
+   - On mobile: Use the "Share Image" button to share via native sharing
+   - On desktop: Use the "Download" button to save the image
+
+## 🛠️ Tech Stack
+
+- **React 19.2.0** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **d3-delaunay** - Voronoi diagram generation
+- **react-dropzone** - Drag & drop file uploads
+- **lucide-react** - Icon library
+- **Canvas API** - Image rendering and manipulation
+
+## 📱 Mobile Support
+
+Fracture is fully optimized for mobile devices:
+
+- **Responsive Layout**: Controls panel adapts to screen size
+- **Touch-Friendly**: All controls are optimized for touch interaction
+- **Web Share API**: Native sharing on iOS Safari and Chrome Android
+- **Performance**: Optimized canvas rendering for mobile devices
+- **PWA Ready**: Meta tags configured for mobile web app installation
+
+## 🌐 Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- iOS Safari (latest)
+- Chrome Android (latest)
+
+Web Share API is supported on:
+- iOS Safari 12.1+
+- Chrome Android 76+
+- Samsung Internet 10+
+
+On unsupported browsers, the share button automatically falls back to download.
+
+## 🎯 How It Works
+
+Fracture uses Voronoi diagrams to create the shatter effect:
+
+1. **Point Generation**: Random points are generated based on the shard count
+2. **Voronoi Tessellation**: The image is divided into cells using Delaunay triangulation
+3. **Transform Application**: Each cell is transformed with rotation, scaling, and displacement
+4. **Gap Rendering**: Optional gaps are drawn between shards with customizable colors
+5. **Canvas Rendering**: The final result is rendered to a high-quality canvas
+
+## 📝 Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🚢 Deployment
+
+Fracture can be deployed to any static hosting service:
+
+- **Vercel**: `vercel --prod`
+- **Netlify**: Connect your Git repository
+- **GitHub Pages**: Use GitHub Actions or deploy manually
+- **Cloudflare Pages**: Connect your repository
+
+The app is a static site with no backend requirements.
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 🤝 Contributing
+
+This is a private project. For questions or suggestions, please contact the maintainer.
+
+---
+
+Built with ❤️ using React and Vite
