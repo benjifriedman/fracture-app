@@ -122,6 +122,11 @@
     .controls-header h3 {
         font-size: 1rem;
     }
+
+    /* Hide download button on mobile - share button is sufficient */
+    .download-btn {
+        display: none;
+    }
 }
 
 .download-btn,
